@@ -1,0 +1,1 @@
+{"name":"Local: 0-1_knapsack_top_down","url":"d:\\Programming\\dynamic-programming\\0-1_knapsack_top_down.cpp","tests":[{"id":1708489547378,"input":"3 8\n3 30\n4 50\n5 60","output":"90"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\dynamic-programming\\0-1_knapsack_top_down.cpp","group":"local","local":true}

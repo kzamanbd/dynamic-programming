@@ -1,21 +1,25 @@
 #include <bits/stdc++.h>
-#define ll long long
 using namespace std;
 
-bool makeIt(ll n, ll value, map<ll, bool>& dp) {
+const int N = 1e5 + 5;
+int dp[N];
+
+bool makeIt(int n, int value) {
     if (value > n) {
         return false;
     }
     if (n == value) {
         return true;
     }
-    if (dp.count(value)) {
+
+    if (dp[value] != -1) {
         return dp[value];
     }
-    bool value1 = makeIt(n, value + 3, dp);
-    bool value2 = makeIt(n, value * 2, dp);
-    dp[value] = value1 || value2;
-    return dp[value];
+
+    bool value1 = makeIt(n, value + 3);
+    bool value2 = makeIt(n, value * 2);
+
+    return dp[value] = value1 || value2;
 }
 
 int main() {
@@ -23,10 +27,10 @@ int main() {
     int tc;
     cin >> tc;
     while (tc--) {
-        ll n;
+        int n;
         cin >> n;
-        map<ll, bool> dp;
-        if (makeIt(n, 1, dp)) {
+        memset(dp, -1, sizeof(dp));
+        if (makeIt(n, 1)) {
             cout << "YES";
         }
         else {
